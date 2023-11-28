@@ -12,6 +12,7 @@ async function getUser(email: string, password: string) {
   try {
 
     const user = await sql<User>`SELECT * FROM users WHERE email=${email}`;
+    console.log(user.rows[0]);
     return user.rows[0];
   } catch (error) { 
     console.error('Failed to fetch user:', error);
@@ -32,6 +33,7 @@ export const { auth, signIn, signOut } = NextAuth({
           const { email, password } = parsedCredentials.data;
           const user = await getUser(email, password);
           if (!user) return null;
+          console.log(password, user.password);
           const passwordsMatch = await bcrypt.compare(password, user.password);
           
           if(passwordsMatch) return user;

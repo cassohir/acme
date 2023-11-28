@@ -6,6 +6,9 @@ import { Suspense } from 'react';
 import { CardSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/app/ui/skeletons';
 import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
 
+export const metadata: Metadata = {
+  title: 'Overview',
+};
 
 export default async function Page() {
   //const revenue = await fetchRevenue(); -- Removing to use in a Stream Component 
