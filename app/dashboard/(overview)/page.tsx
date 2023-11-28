@@ -5,6 +5,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import { CardSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/app/ui/skeletons';
 import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Overview',
